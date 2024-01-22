@@ -1,0 +1,33 @@
+# gpdb6_new_feature_hist
+
+#6.24.0
+1.리소스 그룹 : pg_catalog 쿼리는 리소스 그룹 스캐쥴러에서 차단하는 것을 방지 할수 있는 gp_resource_group_bypass_catalog_query 설정을 제공합니다.
+2. optimizer : Optimizer_discard_redistribute_hashjoin 조인할 데이터의 왜곡을 보이는 경우 쿼리 최적화 방법을 제공합니다.
+3. optimizer : GPORCA는 이제 무작위로 분산된 테이블에 대한 직접 디스패치를 지원합니다.
+4. GPSS : GPSS 1.9.0 이 번들로 제공됩니다.
+5. pg_upgrade : pg_upgraderelfilenode 로 재구축하는 대신 새로운 클러스터에 
+6. extension: tablefunc extension이 제공됩니다.
+7.Greenplum Database 6.24.0에서는 Greenplum MapReduce, PL/Container 3 Beta 및 GreenplumR 클라이언트 기능을 더 이상 사용하지 않습니다.
+
+#6.25.0
+1. beta : gpecoverseg 명령어에서 --differential 옵션을 통하여 인크리멘탈 복구를 지원합니다.
+전체 복구 중에 마지막 전체 복구 이후 변경되지 않은 개체의 복구를 건너뛸 수 있습니다.
+현재 베타 기능이며 프로덕션 환경에서는 지원되지 않습니다. 
+2. gprecoverseg : 이미 진행 중인 기존 세션이 있는 경우 특정 세그먼트에 대한 복구 실행을 방지하기 위해 실행 중인 세션을 찾는 검사(pg_rewind)가 포함됩니다.
+3. extension : 예외 목록 관리, 사용자 차단 해제, 활성 정책 보기를 위한 추가 비밀번호 정책 및 사용자 정의 기능과 같은 새로운 기능이 포함된 advanced_password_check 모듈이 추가됩니다.
+4. extension : pg_audit 모듈이 추가됩니다.
+5. pg_upgrade 명령어에서 pg_upgrade_jobs 옵션을 통해 업그레이드 병렬 스키마 덤프 및 복원, 병렬 테이블스페이스 전송 속도를 향상 시킬수 있습니다.
+6. RHEL 9 를 지원합니다.
+7. PXF 6.7.0 을 지원합니다.
+8. VMware Greenplum 가상 어플라이언스 전용 이미지 릴리즈가 도입됩니다.
+
+6.26.0
+1. OS : Red Hat Enterprise Linux 64비트 9.x 및 Rocky Linux 9.x에 대한 배포를 위해 테스트되었으며 지원됩니다.
+2. GPSS : GPSS 1.10.4를 지원합니다.
+3. extension : gp_check_functions extension 을 지원합니다.
+4. pg_upgrade : RHEL7에서 RHEL8 환경으로 업그레이드되는 경우 사용할 수 있는 upgrade_check.py 가 제공됩니다.
+5. gp_toolkit : gp_toolkit.gp_move_orphaned_files 수정을 통하여 외부 테이블 파일 경로를 변경 할 수 있습니다.
+6. gprecoverseg : Greenplum 6.25.0 부터 지원하는 증분 복구 진행 상황을 gpstate -e 명령어를 통해 확인 할 수 있습니다.
+7. gprecoverseg : gprecoverseg 명령어 세그먼트 재조정 시 replay-lag 옵션을 통하여 미러에 전송되는 WAL 사이즈을 지정할 수 있습니다.
+8. pg_log : pg_log에서 canceling statement due to user request 트랜젝션의 런닝 타임을 기록합니다.
+9. PgBouncer : PgBouncer에는 LDAP password 지원이 추가되었습니다.
